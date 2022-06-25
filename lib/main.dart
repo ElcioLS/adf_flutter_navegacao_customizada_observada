@@ -1,3 +1,4 @@
+import 'package:adf_flutter_navegacao_customizada_observada/core/navigator_observer_custom.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/detalhe_page.dart';
@@ -16,6 +17,11 @@ class MyApp extends StatelessWidget {
       title: 'Navegação',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
+
+      navigatorObservers: [
+        NavigatorObserverCustom(),
+      ],
+
       //o OnGenerateRoute não é chamado quando a rota dele está ativada pelo routes
       // e tambem quando for feita por Page 'PushNamed' rota nomeada
       onGenerateRoute: (RouteSettings settings) {
