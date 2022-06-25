@@ -1,6 +1,7 @@
 import 'package:adf_flutter_navegacao_customizada_observada/core/navigator_observer_custom.dart';
 import 'package:flutter/material.dart';
 
+import 'pages/detalhe2_page.dart';
 import 'pages/detalhe_page.dart';
 import 'pages/home_page.dart';
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         if (settings.name == '/detalhe') {
           // String parametro = settings.arguments as String? ?? 'Não foi enviado o parâmetro';
           final parametro = settings.arguments as String?;
+          // return MaterialPageRoute<String>( //Atenção! Não Tipar o retorno por rotas nomeadas.
           return MaterialPageRoute(
             settings: settings,
             builder: (context) => DetalhePage(
@@ -44,10 +46,11 @@ class MyApp extends StatelessWidget {
         return null;
       },
 
-      // routes: {
-      //   '/': (_) => const HomePage(),
-      //   '/detalhe': (_) => const DetalhePage(),
-      // },
+      routes: {
+        '/': (_) => const HomePage(),
+        // '/detalhe': (_) => const DetalhePage(),
+        '/detalhe2': (_) => const Detalhe2Page(),
+      },
     );
   }
 }
