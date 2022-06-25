@@ -26,9 +26,13 @@ class MyApp extends StatelessWidget {
           );
         }
         if (settings.name == '/detalhe') {
+          // String parametro = settings.arguments as String? ?? 'Não foi enviado o parâmetro';
+          final parametro = settings.arguments as String?;
           return MaterialPageRoute(
             settings: settings,
-            builder: (context) => const DetalhePage(),
+            builder: (context) => DetalhePage(
+              parametro: parametro ?? 'Não foi enviado o parâmetro',
+            ),
           );
         }
         return null;

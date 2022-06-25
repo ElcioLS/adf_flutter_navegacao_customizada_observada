@@ -25,9 +25,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     settings: const RouteSettings(
-                        name: '/detalhe',
-                        arguments: 'Parametro pelo PageRoute'),
-                    builder: ((_) => const DetalhePage()),
+                      name: '/detalhe',
+                      // arguments: 'Parametro pelo PageRoute',
+                    ),
+                    builder: ((_) => const DetalhePage(
+                          parametro: 'Parametro pelo PageRoute',
+                        )),
                   ),
                 );
               },
