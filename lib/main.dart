@@ -43,13 +43,20 @@ class MyApp extends StatelessWidget {
             ),
           );
         }
+        // Rota Customizada tipando o Material como <String>
+        if (settings.name == '/detalhe2') {
+          return MaterialPageRoute<String>(
+            settings: settings,
+            builder: (context) => const Detalhe2Page(),
+          );
+        }
         return null;
       },
 
       routes: {
         '/': (_) => const HomePage(),
         // '/detalhe': (_) => const DetalhePage(),
-        '/detalhe2': (_) => const Detalhe2Page(),
+        // '/detalhe2': (_) => const Detalhe2Page(), //Precisa retirar na rota customizada
       },
     );
   }
